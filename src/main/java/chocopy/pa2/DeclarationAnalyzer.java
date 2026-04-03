@@ -3,7 +3,20 @@ package chocopy.pa2;
 import java.util.ArrayList;
 import java.util.List;
 
-import chocopy.common.analysis.*;
+import chocopy.common.analysis.AbstractNodeAnalyzer;
+import chocopy.common.analysis.SymbolTable;
+import chocopy.common.analysis.types.ClassValueType;
+import chocopy.common.analysis.types.FuncType;
+import chocopy.common.analysis.types.Type;
+import chocopy.common.analysis.types.ValueType;
+import chocopy.common.astnodes.ClassDef;
+import chocopy.common.astnodes.Declaration;
+import chocopy.common.astnodes.Errors;
+import chocopy.common.astnodes.FuncDef;
+import chocopy.common.astnodes.Identifier;
+import chocopy.common.astnodes.Program;
+import chocopy.common.astnodes.TypedVar;
+import chocopy.common.astnodes.VarDef;
 
 /**
  * Analyzes declarations to create the top-level symbol table.

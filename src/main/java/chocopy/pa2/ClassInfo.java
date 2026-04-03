@@ -1,21 +1,20 @@
 package chocopy.pa2;
 
 import java.util.LinkedHashMap;
-import chocopy.common.analysis.types.*;
 import java.util.Map;
 
+import chocopy.common.analysis.types.FuncType;
+import chocopy.common.analysis.types.ValueType;
 
 public final class ClassInfo {
     public final String name;
-    public String supername;
+    public String superName;
 
     public final Map<String, ValueType> attributes = new LinkedHashMap<>();
     public final Map<String, FuncType> methods = new LinkedHashMap<>();
 
-    public ClassInfo(String name, String supername) {
+    public ClassInfo(String name, String superName) {
         this.name = name;
-        this.supername = supername;
+        this.superName = superName;
     }
 }
-
-
