@@ -1,18 +1,6 @@
 package chocopy.pa2;
 
-import chocopy.common.analysis.AbstractNodeAnalyzer;
-import chocopy.common.analysis.SymbolTable;
-import chocopy.common.analysis.types.Type;
-import chocopy.common.analysis.types.ValueType;
-import chocopy.common.astnodes.BinaryExpr;
-import chocopy.common.astnodes.Declaration;
-import chocopy.common.astnodes.Errors;
-import chocopy.common.astnodes.ExprStmt;
-import chocopy.common.astnodes.Identifier;
-import chocopy.common.astnodes.IntegerLiteral;
-import chocopy.common.astnodes.Node;
-import chocopy.common.astnodes.Program;
-import chocopy.common.astnodes.Stmt;
+import chocopy.common.analysis.*;
 
 import static chocopy.common.analysis.types.Type.INT_TYPE;
 import static chocopy.common.analysis.types.Type.OBJECT_TYPE;
