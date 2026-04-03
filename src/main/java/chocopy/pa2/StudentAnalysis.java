@@ -15,19 +15,23 @@ public class StudentAnalysis {
             return program;
         }
 
+        ClassHierarchy hierarchy = new ClassHierarchy();
+
+        ClassCollector classCollector =
+            new ClassCollector(hierarchy, program.errors);
+        program.dispatch(classCollector);
+
         DeclarationAnalyzer declarationAnalyzer =
-            new DeclarationAnalyzer(program.errors);
+            new DeclarationAnalyzer(hierarchy, program.errors);
         program.dispatch(declarationAnalyzer);
-        SymbolTable<Type> globalSym =
-            declarationAnalyzer.getGlobals();
-        
+
+        SymbolTable<Type> globalSym = declarationAnalyzer.getGlobals();
 
         if (!program.hasErrors()) {
             TypeChecker typeChecker =
-                new TypeChecker(globalSym, program.errors);
+                new TypeChecker(globalSym, hierarchy, program.errors);
             program.dispatch(typeChecker);
         }
-
 
         return program;
     }
